@@ -19,8 +19,8 @@ while True:
 
 for num in numbers:
     if num < 0:
-        print(f"The first intruder detected is : {num}")
+        print(f"The first intruder number detected is : {num}")
         break
 else:
-    print("No intruder detected in the list.")
+    print("No intruder number detected in the list.")
 
