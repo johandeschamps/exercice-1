@@ -12,4 +12,3 @@ while True:
         break
     numbers.append(number)
 
-print("List numbers:", numbers)
