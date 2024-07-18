@@ -24,3 +24,11 @@ for num in numbers:
 else:
     print("No intruder number detected in the list.")
 
+# ----------------------------------------------
+
+negative_numbers = [num for num in numbers if num < 0]
+
+if negative_numbers:
+    print(f"Intruded number(s) detected : {negative_numbers}")
+    print(f"Total number of intruded number(s) : {len(negative_numbers)}")
+
