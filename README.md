@@ -1,5 +1,4 @@
 # Jeux nombre intrus
 
-Ce programme permet de jouer à 2 variantes du jeu de Nim :
-* variante simple ;
-* variante de Marienbad.
+Programme qui détecte dans une liste contenant des nombres entiers non nuls des intrus 
+qui sont des nombres négatifs 
