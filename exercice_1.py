@@ -7,8 +7,10 @@ Exercice 1 Base Python
 
 numbers = []
 while True:
-    number = int(input("Enter number "))
-    if number == 0:
-        break
-    numbers.append(number)
-
+    try:
+        number = int(input("Enter number "))
+        if number == 0:
+            break
+        numbers.append(number)
+    except ValueError:
+        print("Sorry, the input is not correct")
