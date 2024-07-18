@@ -4,3 +4,5 @@
 """
 Exercice 1 Base Python
 """
+
+print("jeu nombre intrus")
