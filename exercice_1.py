@@ -14,3 +14,13 @@ while True:
         numbers.append(number)
     except ValueError:
         print("Sorry, the input is not correct")
+
+# ----------------------------------------------
+
+for num in numbers:
+    if num < 0:
+        print(f"The first intruder detected is : {num}")
+        break
+else:
+    print("No intruder detected in the list.")
+
