@@ -5,43 +5,50 @@
 Exercice 1 Base Python
 """
 
-# L'utilisateur rentre un nombre, Si le nombre saisi est égale à 0
-# l'utilisateur sort de la boucle
-# Sinon il ajoute le nombre à la liste "numbers".
+def input_list_numbers():
 
-numbers = []
-while True:
-    try:
-        number = int(input("Enter number, 0 to exit : "))
-        if number == 0:
+    """
+    Invite l'utilisateur à rentrer un nombre, Si le nombre saisi est égale à 0
+    l'utilisateur sort de la boucle. Sinon, il ajoute le nombre à la liste "numbers".
+    :return: Liste des nombres saisis
+    """
+
+    numbers = []
+    while True:
+        try:
+            number = int(input("Enter number, 0 to exit : "))
+            if number == 0:
+                break
+            numbers.append(number)
+        except ValueError:
+            print("Sorry, the input is not correct")
+    return numbers
+
+def detect_numbers_intruder(numbers):
+
+    """
+    Détecte les nombres négatifs dans la liste (intrus) et les afficher.
+    Détecte les nombres positifs dans la liste et les afficher.
+    :param numbers: Liste de nombres
+    :return: Liste des nombres négatifs et/ou positifs.
+    """
+
+    negative_numbers = [num for num in numbers if num < 0]
+
+    for num in numbers:
+        if num < 0:
+            print(f"The first intruder number detected is : {num}")
             break
-        numbers.append(number)
-    except ValueError:
-        print("Sorry, the input is not correct")
+    else:
+        print("No intruder number detected in the list.")
 
-# Après avoir collecté les nombres, le code vérifie s’il y a des nombres négatifs
-# dans la liste “numbers”, il itère à travers chaque nombre dans la liste.
+    if negative_numbers:
+        print(f"Intruded number(s) detected : {negative_numbers}")
+        print(f"Total number of intruded number(s) : {len(negative_numbers)}")
 
-for num in numbers:
-    if num < 0:
-        print(f"The first intruder number detected is : {num}")
-        break
-else:
-    print("No intruder number detected in the list.")
+    positive_numbers = [num for num in numbers if num > 0]
+    if positive_numbers:
+        print(positive_numbers)
 
-# La liste appelée negative_numbers contient tous les nombres négatifs de
-# la liste numbers d’origine (s’il y en a).
-
-negative_numbers = [num for num in numbers if num < 0]
-
-if negative_numbers:
-    print(f"Intruded number(s) detected : {negative_numbers}")
-    print(f"Total number of intruded number(s) : {len(negative_numbers)}")
-
-# La liste appelée positive_numbers contient tous
-# les nombres positifs de la liste numbers d’origine et l’affiche.
-
-positive_numbers = [num for num in numbers if num > 0]
-print(positive_numbers)
-
-# ----------------------------------------------------------------------------
+numbers = input_list_numbers()
+detect_numbers_intruder(numbers)
