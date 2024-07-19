@@ -32,3 +32,7 @@ if negative_numbers:
     print(f"Intruded number(s) detected : {negative_numbers}")
     print(f"Total number of intruded number(s) : {len(negative_numbers)}")
 
+# ----------------------------------------------
+
+positive_numbers = [num for num in numbers if num >= 0]
+print(positive_numbers)
